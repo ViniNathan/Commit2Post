@@ -1,0 +1,24 @@
+{
+  "name": "@Commit2Post/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@Commit2Post/db": "workspace:*",
+    "@Commit2Post/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@Commit2Post/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
