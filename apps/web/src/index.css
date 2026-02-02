@@ -119,10 +119,15 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply font-sans bg-background text-foreground;
-  }
   html {
     @apply font-sans;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  body {
+    @apply font-sans bg-background text-foreground;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 }
