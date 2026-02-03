@@ -11,13 +11,7 @@ const sections = [
     rightLabel: "GitHub",
     background: "",
     renderBackground: () => (
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(180deg, #000000 0%, #0d0d0d 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black to-[#0d0d0d]" />
     ),
   },
   {
@@ -26,13 +20,7 @@ const sections = [
     rightLabel: "Agent",
     background: "",
     renderBackground: () => (
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(180deg, #0d0d0d 0%, #111111 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] to-[#111111]" />
     ),
   },
   {
@@ -41,13 +29,7 @@ const sections = [
     rightLabel: "LinkedIn",
     background: "",
     renderBackground: () => (
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(180deg, #111111 0%, #0a0a0a 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#111111] to-[#0a0a0a]" />
     ),
   },
   {
@@ -56,13 +38,7 @@ const sections = [
     rightLabel: "Growth",
     background: "",
     renderBackground: () => (
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(180deg, #0a0a0a 0%, #000000 100%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] to-black" />
     ),
   },
 ];
@@ -112,13 +88,7 @@ export default function HeroSection() {
         </>
       }
       footer={
-        <div
-          style={{
-            fontSize: "clamp(0.9rem, 2vw, 1.2rem)",
-            fontWeight: 500,
-            opacity: 0.8,
-          }}
-        >
+        <div className="text-[clamp(0.9rem,2vw,1.2rem)] font-medium opacity-80">
           Developer Experience Reimagined
         </div>
       }

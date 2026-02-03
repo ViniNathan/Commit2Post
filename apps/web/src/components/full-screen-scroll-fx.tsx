@@ -458,14 +458,15 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
 
     // CSS vars
     const cssVars: CSSProperties = {
-      ["--fx-font" as any]: fontFamily,
-      ["--fx-text" as any]: colors.text ?? "rgba(245,245,245,0.92)",
-      ["--fx-overlay" as any]: colors.overlay ?? "rgba(0,0,0,0.35)",
-      ["--fx-page-bg" as any]: colors.pageBg ?? "#fff",
-      ["--fx-stage-bg" as any]: colors.stageBg ?? "#000",
-      ["--fx-gap" as any]: `${gap}rem`,
-      ["--fx-grid-px" as any]: `${gridPaddingX}rem`,
-      ["--fx-row-gap" as any]: "10px",
+      ["--fx-font" as string]: fontFamily,
+      ["--fx-text" as string]: colors.text ?? "rgba(245,245,245,0.92)",
+      ["--fx-overlay" as string]: colors.overlay ?? "rgba(0,0,0,0.35)",
+      ["--fx-page-bg" as string]: colors.pageBg ?? "#fff",
+      ["--fx-stage-bg" as string]: colors.stageBg ?? "#000",
+      ["--fx-gap" as string]: `${gap}rem`,
+      ["--fx-grid-px" as string]: `${gridPaddingX}rem`,
+      ["--fx-row-gap" as string]: "10px",
+      ["--fx-section-height" as string]: `${Math.max(1, total + 1) * 100}vh`,
     };
 
     return (
@@ -615,7 +616,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
             background: rgba(255,255,255,0.8); color: #000; padding: 6px 8px; font: 12px/1 monospace; border-radius: 4px;
           }
 
-          .fx-fixed-section { height: ${Math.max(1, total + 1)}00vh; position: relative; }
+          .fx-fixed-section { height: var(--fx-section-height); position: relative; }
           .fx-fixed { position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden; background: var(--fx-page-bg); }
 
           .fx-grid {
@@ -648,14 +649,14 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
           .fx-content {
             grid-column: 1 / 13;
             position: absolute; inset: 0;
-            display: grid; grid-template-columns: 1fr 1.3fr 1fr; /* L 30% / C 40% / R 30% vibe */
+            display: grid; grid-template-columns: 1fr 1.3fr 1fr;
             align-items: center;
             height: 100%;
             padding: 0 var(--fx-grid-px);
           }
 
           .fx-left, .fx-right {
-            height: 60vh; /* gives us room to center the active row */
+            height: 60vh;
             overflow: hidden;
             display: grid; align-content: center;
           }
@@ -713,7 +714,7 @@ export const FullScreenScrollFX = forwardRef<HTMLDivElement, FullScreenFXProps>(
           .fx-end { height: 100vh; display: grid; place-items: center; }
           .fx-fin { transform: rotate(90deg); color: #111; }
 
-          @media (max-width: 900px) {
+          @media (max-width: 1024px) {
             .fx-content {
               grid-template-columns: 1fr; row-gap: 3vh;
               place-items: center;
