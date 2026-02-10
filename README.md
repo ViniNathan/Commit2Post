@@ -1,7 +1,6 @@
 # Commit2Post
 
 This project was created with a modern TypeScript stack that combines Next.js, Elysia, TRPC, and more.
-
 ## Features
 
 - **TypeScript** - For type safety and improved developer experience
